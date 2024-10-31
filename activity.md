@@ -60,15 +60,14 @@ Run the following commands.
 1.  What does `git help` do?
 
     ```
-
+gives you a list of commonly used commands
 
     ```
 
 2.  What does `-ag` cause `git help` to do?
 
     ```
-
-
+list both commands and guides
 
     ```
 
@@ -90,17 +89,13 @@ consider changing this configuration before you walk away.
 1.  What are these commands doing?
 
     ```
-
-
-
+They are setting my username and email.
     ```
 
 2.  What is the purpose of `--global`?
 
     ```
-
-
-
+Saves the information in all repositories
     ```
 
 F. Create a repository
