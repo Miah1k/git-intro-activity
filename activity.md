@@ -60,14 +60,14 @@ Run the following commands.
 1.  What does `git help` do?
 
     ```
-gives you a list of commonly used commands
+    gives you a list of commonly used commands
 
     ```
 
 2.  What does `-ag` cause `git help` to do?
 
     ```
-list both commands and guides
+    list both commands and guides
 
     ```
 
@@ -89,13 +89,13 @@ consider changing this configuration before you walk away.
 1.  What are these commands doing?
 
     ```
-They are setting my username and email.
+    They are setting up my username and email.
     ```
 
 2.  What is the purpose of `--global`?
 
     ```
-Saves the information in all repositories
+    Saves the information in all repositories
     ```
 
 F. Create a repository
@@ -112,16 +112,13 @@ cd first_project
     display a hidden file?
 
     ```
-
-
+    ls -a
     ```
 
 2. Run this command to show the hidden files in the current directory. Are there any?
 
     ```
-
-
-
+    yes
     ```
 
 3. Now run the following command.
@@ -134,18 +131,14 @@ cd first_project
 4. Check for hidden files again.  What was created by `git init`?
 
     ```
-
-
-
+    .git
     ```
 
 
 3.  What do you think would happen if you delete `.git`?
 
     ```
-
-
-
+    it would remove all git information
     ```
 
 4.  Using your observations to the previous questions, answer the following.
@@ -154,9 +147,7 @@ cd first_project
     if the project is being managed using Git?
 
     ```
-
-
-
+    .git
     ```
 
 G. Basic commands
@@ -165,7 +156,7 @@ G. Basic commands
 Use a plain text editor to create `names.txt` inside the `first_project`
 folder. Put the names of your team in the file. Save and exit.
 
-Run `git status` before and after each of these commands.
+Run `git status` before and after each of these c. mmands.
 
     git add names.txt
     git commit –m “Add our names.”
@@ -174,25 +165,19 @@ Run `git status` before and after each of these commands.
 1.  What kind of information does `git status` report?
 
     ```
-
-
-
+    it provides the status of active directories
     ```
 
 2.  What does `git add names.txt` do?
 
     ```
-
-
-
+    saves any changes to add them to the next commit
     ```
 
 3.  What does `git commit -m "Add our names."` do?
 
     ```
-
-
-
+    creates new commit and captures the state of the files
     ```
 
 Use a plain text editor to create the following files:
@@ -211,34 +196,26 @@ Run `git status` before and after each of these commands.
 4.  What does `git add .` do? What do you think `.` means?
 
     ```
-
-
-
+    it stages all changes to be in the next commit
     ```
 
 5.  What does `git commit` (without -m) do?
 
     ```
-
-
-
+    opens the text editor for git
     ```
 
 6.  If you want to write a more detailed commit message (which is
     good practice) what command would you use?
 
     ```
-
-
-
+    git commit
     ```
 
 7.  What does `git log` do?
 
     ```
-
-
-
+    gets commit history
     ```
 
 
@@ -266,50 +243,38 @@ Run the following commands:
     **Staged**
 
     ```
-
-
-
+    names.txt
     ```
 
     **Unstaged**
 
     ```
-
-
-
+    movies.txt
     ```
 
     **Untracked**
 
     ```
-
-
-
+    food.txt
     ```
 
 1.  If you run `git commit` what changes will be committed (***don't do
     it***)?
 
     ```
-
-
-
+    only the staged items will be included in the commit
     ```
 
 2.  What command do you run to stage changes?
 
     ```
-
-
-
+    git add
     ```
 
 3.  What command do you run to unstage changes?
 
     ```
-
-
-
+    git restore --staged
     ```
 
 Run the following commands:
@@ -320,17 +285,13 @@ Run the following commands:
 1.  What does `git diff` display?
 
     ```
-
-
-
+    shows how different files vary in the repository 
     ```
 
 2.  What does `git diff --cached` display?
 
     ```
-
-
-
+    the staged changes for the next commit
     ```
 
 3.  Formulate a sequence of commands to unstage changes to `names.txt`,
@@ -338,9 +299,9 @@ Run the following commands:
     confirm they worked.
 
     ```
-
-
-
+    git restore --staged names.txt
+    git add movies.txt
+    git status
     ```
 
 4.  Edit `movies.txt`, change any one of the movies, and save it. Then
@@ -348,27 +309,21 @@ Run the following commands:
     going on.
 
     ```
-
-
-
+    the movies.txt will be both staged and unstaged because of the new changes
     ```
 
 5.  Delete `names.txt`. Then run `git status`. What do you observe?
     Explain what you think is going on.
 
     ```
-
-
-
+    names.txt will have the status of deleted
     ```
 
 6.  Rename `movies.txt` to `last-movies`. Run `git status`. Observe
     and explain.
 
     ```
-
-
-
+    both the rename and all contents of movies.txt will be staged
     ```
 
 7.  Formulate a sequence of commands to stage all changes including the
@@ -376,27 +331,22 @@ Run the following commands:
     Execute them.
 
     ```
-
-
-
+    git add
+    git commit -m "Update files: staged modifications, rename movies.txt to last-movies, and add untracked files"
     ```
 
 8.  In Git vernacular, `index`, `cache`, and `stage` all refer to the
     same thing. What does it hold?
 
     ```
-
-
-
+    any changes, new files, and deletions
     ```
 
 9.  Why have a `stage`? Why not just commit all changes since the last
     commit?
 
     ```
-
-
-
+    the stage allows for greater flexibility and control over commits
     ```
 
 I. Undo
@@ -413,9 +363,7 @@ Run the following commands:
 1.  What does `git reset --soft ``"HEAD^" `do?
 
     ```
-
-
-
+    used to undo most recent commit 
     ```
 
 Run the following commands:
@@ -430,31 +378,25 @@ Run the following commands:
 1.  What does `git reset --hard "HEAD^"`` `do?
 
     ```
-
-
-
+    changes the current branch back to the previous commmit
     ```
 
 2.  What is the difference between `--hard` and `--soft`?
 
     ```
-
-
-
+    they both move the commit back one but soft keeps the changes while hard does not
     ```
 
 3.  What do you think `HEAD` means?
 
     ```
-
-
+    current state
     ```
 
 4.  What do you think `HEAD^` means?
 
     ```
-
-
+    parent commit
     ```
 
 J. Helpful resources
